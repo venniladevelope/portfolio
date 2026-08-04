@@ -48,6 +48,19 @@ const metrics = [
   { value: '8+', label: 'Core Technologies' },
 ];
 
+const aboutHighlights = [
+  'Full-stack feature development',
+  'Secure login and payment flows',
+  'Database design and API integration',
+];
+
+const experienceHighlights = [
+  'Architect, develop, and maintain end-to-end web applications using React.js, Node.js, Express.js, PHP, and Laravel.',
+  'Design and integrate RESTful APIs, third-party authentication protocols, Auth0 SSO, and Stripe payment solutions.',
+  'Optimize database queries, schema designs, and application performance across MySQL, PostgreSQL, and MongoDB.',
+  'Collaborate with clients and technical teams to gather requirements, debug issues, and ship updates through Git workflows.',
+];
+
 const ContactIcon = ({ type }) => {
   const paths = {
     phone: (
@@ -171,12 +184,12 @@ function App() {
               <span>MongoDB</span>
             </div>
             <div className="hero-actions">
-              <a href="#projects" className="button primary">
-                View Projects
-              </a>
-              <a href="mailto:venniladevelope@gmail.com" className="button secondary">
+              <a href="#contact" className="button primary">
                 Email Me
               </a>
+              {/* <a href="mailto:venniladevelope@gmail.com" className="button secondary">
+                Email Me
+              </a> */}
             </div>
           </div>
 
@@ -209,34 +222,59 @@ function App() {
       </section>
 
       <section className="about-section">
-        <div className="section-heading">
+        <div className="about-header">
           <p className="eyebrow">About</p>
-          <h2>Clean builds, practical systems, reliable delivery.</h2>
+          <h2>I build web apps that connect clean interfaces with dependable backend systems.</h2>
         </div>
-        <p>
-          Currently at Santhila Databot Private Limited, I work across frontend, backend,
-          database design, API integration, Auth0 SSO, Stripe payment gateways, and deployment
-          workflows. I enjoy turning requirements into stable production features and improving
-          performance where users feel the difference.
-        </p>
+        <div className="about-body">
+          <p>
+            Currently at Santhila Databot Private Limited, I work across React, Node.js,
+            Laravel, REST APIs, Auth0 SSO, Stripe payment gateways, database workflows, and
+            deployment tasks. I care about clean interfaces, reliable backend logic, and
+            features that stay easy to maintain after launch.
+          </p>
+          <div className="about-details" aria-label="About details">
+            <div>
+              <span>Role</span>
+              <strong>Full Stack Developer</strong>
+            </div>
+            <div>
+              <span>Company</span>
+              <strong>Santhila Databot</strong>
+            </div>
+          </div>
+        </div>
+        <div className="about-focus" aria-label="About focus areas">
+          {aboutHighlights.map((highlight, index) => (
+            <span key={highlight}>
+              <b>0{index + 1}</b>
+              {highlight}
+            </span>
+          ))}
+        </div>
       </section>
 
       <section className="experience-section" id="work">
-        <div className="section-heading">
+        <div className="experience-label">
           <p className="eyebrow">Work Experience</p>
-          <h2>Santhila Databot Private Limited</h2>
+          <span>2025</span>
         </div>
-        <div className="timeline-item">
-          <div>
-            <span className="role">Full Stack Developer</span>
-            <span className="date">July 2025 - Present</span>
+        <div className="experience-console">
+          <div className="experience-head">
+            <div>
+              <span className="date">July 2025 - Present</span>
+              <h2>Santhila Databot Private Limited</h2>
+            </div>
+            <strong className="role">Full Stack Developer</strong>
           </div>
-          <ul>
-            <li>Architect, develop, and maintain end-to-end web applications using React.js, Node.js, Express.js, PHP, and Laravel.</li>
-            <li>Design and integrate RESTful APIs, third-party authentication protocols, Auth0 SSO, and Stripe payment solutions.</li>
-            <li>Optimize database queries, schema designs, and application performance across MySQL, PostgreSQL, and MongoDB.</li>
-            <li>Collaborate with clients and technical teams to gather requirements, debug issues, and ship updates through Git workflows.</li>
-          </ul>
+          <div className="experience-track">
+            {experienceHighlights.map((highlight, index) => (
+              <article className="experience-row" key={highlight}>
+                <span>0{index + 1}</span>
+                <p>{highlight}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
